@@ -41,15 +41,18 @@ public class ex1 {
             }
 
             class current_date {
-                private static final int day = 17;
+                private static final int day = 25; //взята дата 25 ноября
                 private static final int month = 11;
                 private static final int year = 2022;
             }
 
-            if (month > current_date.month) {
+            if (month > current_date.month & day<current_date.day) {
                 System.out.println((current_date.year - year - 1) + " лет" + ", " + (current_date.month) + " месяцев" + " и " + (current_date.day - day + " дней"));
             }
-            if (day > current_date.day) {
+            else if(month > current_date.month & day>current_date.day){
+                System.out.println((current_date.year - year - 1) + " лет" + ", " + (current_date.month) + " месяцев" + " и " + (day-current_date.day + " дней"));
+            }
+            else if (day > current_date.day) {
                 System.out.println((current_date.year - year) + " лет" + ", " + (current_date.month - month) + " месяцев" + " и " + (current_date.day + " дней"));
             }
             else if ((day==current_date.day)|(month<current_date.month)) {
