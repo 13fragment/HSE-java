@@ -21,18 +21,11 @@ public class ex1 {
                 System.exit(1);
             }
 
-            if ((month == 1) & (day > 31) |
-                    (month == 2) & (day > 29) |
-                    (month == 3) & (day > 31) |
+            if (    (month == 2) & (day > 29) |
                     (month == 4) & (day > 30) |
-                    (month == 5) & (day > 31) |
                     (month == 6) & (day > 30) |
-                    (month == 7) & (day > 31) |
-                    (month == 8) & (day > 31) |
                     (month == 9) & (day > 30) |
-                    (month == 10) & (day > 31) |
-                    (month == 11) & (day > 30) |
-                    (month == 12) & (day > 31)
+                    (month == 11) & (day > 30)
             ) {
                 System.err.println("В этом месяце меньше дней");
                 System.exit(1);
