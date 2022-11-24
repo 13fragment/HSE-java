@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class ex2 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.print("Введите день: ");
+        System.out.print("День: ");
         int day = input.nextInt();
-        System.out.print("Введите месяц: ");
+        System.out.print("Месяц: ");
         int month = input.nextInt();
         input.close();
         if      ((month == 1) & (day>30)  |
