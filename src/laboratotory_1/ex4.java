@@ -13,11 +13,12 @@ public class ex4 {
         float radius = input.nextFloat();
         int counter = 0;
         for (int i = 1; i <= kol_vo; i++) {
-            System.out.print("X Координата точки: ");
+            System.out.print("X ");
+            System.out.print(i+" точки: ");
             float x1 = input.nextFloat();
 
-            System.out.print("Y Координата точки: ");
-
+            System.out.print("Y ");
+            System.out.print(i+" точки: ");
             float y1 = input.nextFloat();
             if ((x1 * x1 + y1 * y1 <= radius * radius)) {
                 counter += 1;
