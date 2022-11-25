@@ -11,8 +11,8 @@ public class ex3 {
         int n = input.nextInt();
         input.close();
         int power = x;
-        float one = 1;
-        float power_2 = one / x;
+        double one = 1;
+        double power_2 = one / x;
         if (n >0) {
             int f =1;
             while (f<n) {
