@@ -16,7 +16,7 @@ public class ex_2 {
         System.out.println("Массив: " + Arrays.toString(array));
         System.out.print("Число к удалению: ");
         int delete = in.nextInt();
-        for (int m = 0; m < array.length - 1; m++) {
+        for (int m = 0; m < array.length; m++) {
                 if (array[m] != delete) {
                     System.out.print(array[m]+" ");
                 }
