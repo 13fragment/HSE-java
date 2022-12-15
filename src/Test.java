@@ -4,6 +4,7 @@ public class Test {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.print("Введите размерность массива: ");
+        while (true){
         int size = in.nextInt();
         float [] a = new float[size];
         float [] a2 = new float[size-1];
@@ -27,5 +28,11 @@ public class Test {
             System.out.print(elem+" ");
         }
         System.out.println("\n"+"Обработанный массив: "+tmp);
+        System.out.print("Введите размерность массива, либо выйдите из цикла используя /quit: ");
+        if(in.hasNext("/quit")){
+            in.close();
+            System.exit(0);
+            }
+        }
     }
 }
