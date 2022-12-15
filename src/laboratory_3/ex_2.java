@@ -23,8 +23,7 @@ public class ex_2 {
                     System.out.print(array[m]+" ");
                 }
         }
-            System.out.print("\n");
-            System.out.print("Введите размерность массива, либо выйдите из цикла используя /quit: ");
+            System.out.print("\n"+"Введите размерность массива, либо выйдите из цикла используя /quit: ");
         if(in.hasNext("quit")){
             in.close();
             System.exit(0);
