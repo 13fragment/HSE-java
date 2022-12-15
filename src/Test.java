@@ -21,7 +21,7 @@ public class Test {
                 tmp+=a2[m];
             }
         }
-        System.out.println(Arrays.toString(a)+"\n" + tmp);
         if (a[a.length-1]>a[a.length-2]) tmp += a[a.length - 1];
+        System.out.println(Arrays.toString(a)+"\n" + tmp);
     }
 }
