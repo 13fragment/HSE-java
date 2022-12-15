@@ -9,6 +9,11 @@ public class ex_2 {
         while (true){
         try{
         int k = in.nextInt();
+        if (k<=0){
+            System.err.println("Длина массива не может быть <=0, исходя из условия");
+            System.exit(1);
+            in.close();
+        }
         int[] array = new int[k];
         for (int i = 0; i < k; i++) {
             array[i] = in.nextInt();
@@ -32,7 +37,7 @@ public class ex_2 {
         }
         }catch (InputMismatchException e){
             System.out.println("Ошибка, массив и число к удалению должны быть целыми");
-            System.exit(0);
+            System.exit(1);
             in.close();
         }
         }
