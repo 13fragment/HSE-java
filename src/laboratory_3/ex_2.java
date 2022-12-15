@@ -1,4 +1,5 @@
 package laboratory_3;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ex_2 {
@@ -6,6 +7,7 @@ public class ex_2 {
         Scanner in = new Scanner(System.in);
         System.out.print("Размерность массива: ");
         while (true){
+        try{
         int k = in.nextInt();
         int[] array = new int[k];
         for (int i = 0; i < k; i++) {
@@ -27,6 +29,11 @@ public class ex_2 {
         if(in.hasNext("quit")){
             in.close();
             System.exit(0);
+        }
+        }catch (InputMismatchException e){
+            System.out.println("Ошибка, массив и число к удалению должны быть целыми");
+            System.exit(0);
+            in.close();
         }
         }
     }
