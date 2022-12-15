@@ -5,7 +5,13 @@ public class Test {
         Scanner in = new Scanner(System.in);
         System.out.print("Введите размерность массива: ");
         while (true){
+
         int size = in.nextInt();
+            if (size<=0){
+                System.err.println("Длина массива не может быть <=0, исходя из условия");
+                System.exit(1);
+                in.close();
+            }
         float [] a = new float[size];
         float [] a2 = new float[size-1];
         String tmp ="";
