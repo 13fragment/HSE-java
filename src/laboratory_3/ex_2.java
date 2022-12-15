@@ -7,7 +7,6 @@ public class ex_2 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.print("Размерность массива: ");
-        String elem = " ";
         int k = in.nextInt();
         int[] array = new int[k];
         for (int i = 0; i < k; i++) {
