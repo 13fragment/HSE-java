@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Test {
@@ -5,13 +6,13 @@ public class Test {
         Scanner in = new Scanner(System.in);
         System.out.print("Введите размерность массива: ");
         while (true){
-
-        int size = in.nextInt();
-            if (size<=0){
-                System.err.println("Длина массива не может быть <=0, исходя из условия");
-                System.exit(1);
-                in.close();
-            }
+            try {
+            int size = in.nextInt();
+        if (size<=0){
+            System.err.println("Длина массива не может быть <=0, исходя из условия");
+            System.exit(1);
+            in.close();
+        }
         float [] a = new float[size];
         float [] a2 = new float[size-1];
         String tmp ="";
@@ -38,6 +39,11 @@ public class Test {
         if(in.hasNext("/quit")){
             in.close();
             System.exit(0);
+            }
+        }catch(InputMismatchException e){
+                System.err.println("Введен неверный тип переменной");
+                System.exit(1);
+                in.close();
             }
         }
     }
