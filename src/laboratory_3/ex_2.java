@@ -1,6 +1,4 @@
 package laboratory_3;
-
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class ex_2 {
@@ -12,9 +10,13 @@ public class ex_2 {
         for (int i = 0; i < k; i++) {
             array[i] = in.nextInt();
         }
-        System.out.println("Массив: " + Arrays.toString(array));
-        System.out.print("Число к удалению: ");
+        System.out.print("Исходный массив: ");
+        for (int elem :array){
+            System.out.print(elem+" ");
+        }
+        System.out.print("\n"+"Число к удалению: ");
         int delete = in.nextInt();
+        System.out.print("Массив после обрабтки: ");
         for (int m = 0; m < array.length; m++) {
                 if (array[m] != delete) {
                     System.out.print(array[m]+" ");
