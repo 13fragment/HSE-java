@@ -6,7 +6,7 @@ public class Test {
         Scanner in = new Scanner(System.in);
         int size = in.nextInt();
         float [] a = new float[size];
-        float [] a2 = new float[2];
+        float [] a2 = new float[size-1];
         String tmp ="";
         for (int i =0;i<a.length;i++){
             a[i]=in.nextFloat();
@@ -18,7 +18,7 @@ public class Test {
          }
         for (int m = 0; m<a2.length-1;m++){
             if (a2[m+1]<a2[m]){
-                tmp+=a2[m];
+                tmp+=a2[m]+" ";
             }
         }
         if (a[a.length-1]>a[a.length-2]) tmp += a[a.length - 1];
