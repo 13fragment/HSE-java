@@ -22,6 +22,9 @@ public class Test {
             }
         }
         if (a[a.length-1]>a[a.length-2]) tmp += a[a.length - 1];
-        System.out.println(Arrays.toString(a)+"\n" + tmp);
+        for (float elem:a){
+            System.out.print(elem+" ");
+        }
+        System.out.println("\n"+tmp);
     }
 }
