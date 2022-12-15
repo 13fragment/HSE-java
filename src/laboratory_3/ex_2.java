@@ -36,7 +36,7 @@ public class ex_2 {
             System.exit(0);
         }
         }catch (InputMismatchException e){
-            System.out.println("Ошибка, массив и число к удалению должны быть целыми");
+            System.err.println("Ошибка, массив и число к удалению должны быть целыми");
             System.exit(1);
             in.close();
         }
