@@ -43,7 +43,6 @@ public class ex_3 {
                 }
             }catch(InputMismatchException e){
                 System.err.println("Введен неверный тип переменной");
-                System.exit(1);
                 in.close();
             }
         }
