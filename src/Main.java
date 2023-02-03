@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-//2a**2(1+sqrt(2))
 abstract class Figure{
     public abstract String NameFigure();
     public abstract double P();
@@ -48,6 +47,29 @@ class Triangle extends Figure{
         return a*b;
     }
 }
+class Octagon extends Figure{
+    double a;
+    public String NameFigure(){
+        return "восьмиугольник";
+    }
+    public Octagon(double a){
+        if(a >= 0) {
+            this.a = a;
+        }
+    }
+
+    public String toString() {
+        return "a = " + a;
+    }
+    public double P(){
+        return a*8;
+    }
+
+    public double S() {
+        return (2 * a * a) * (1 + Math.sqrt(2));
+    }
+
+}
 public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -59,6 +81,10 @@ public class Main {
         if(in.hasNext(rectangle.NameFigure())){
             System.out.println(rectangle.toString()+"P = "+rectangle.P()+"S = "+rectangle.S());
         }
+        Octagon octagon = new Octagon(6);
+        if(in.hasNext(octagon.NameFigure())){
+            System.out.println(octagon.toString()+"P = "+octagon.P()+"S = "+octagon.S());
+        }
         in.close();
     }
-    }
+}
