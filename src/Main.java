@@ -1,9 +1,16 @@
+import java.util.Scanner;
+
+//2a**2(1+sqrt(2))
 abstract class Figure{
+    public abstract String NameFigure();
     public abstract double P();
     public abstract double S();
 }
 class Triangle extends Figure{
     double a,b,c;
+    public String NameFigure(){
+    return "треугольник";
+    }
     public Triangle (double c,double b, double a){
         this.a = a;
         this.b = b;
@@ -22,12 +29,13 @@ class Triangle extends Figure{
 }
  class Rectangle extends Figure {
     double a,b;
-    public Rectangle (double b, double a) throws Exception {
+     public String NameFigure(){
+         return "прямоугольник";
+     }
+    public Rectangle (double b, double a){
         if (a>=0 && b>=0){
         this.a = a;
         this.b = b;
-        }else{
-            throw new Exception ("Недопустимый параметр");
         }
     }
     public String toString(){
@@ -42,13 +50,15 @@ class Triangle extends Figure{
 }
 public class Main {
     public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
         Triangle triangle = new Triangle(3,4,5);
-        System.out.println(triangle.P());
-        try{
-        Rectangle rectangle = new Rectangle(4,8);
-        System.out.println(rectangle.toString()+" S = "+rectangle.S());
-        }catch(Exception e){
-            System.out.println(e.toString());
+        if (in.hasNext(triangle.NameFigure())){
+            System.out.println(triangle.toString()+"P = "+triangle.P()+"S = "+triangle.S());
         }
+        Rectangle rectangle = new Rectangle(4,8);
+        if(in.hasNext(rectangle.NameFigure())){
+            System.out.println(rectangle.toString()+"P = "+rectangle.P()+"S = "+rectangle.S());
+        }
+        in.close();
     }
-}
+    }
