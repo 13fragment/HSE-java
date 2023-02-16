@@ -67,14 +67,27 @@ class Fractions{
             return fraction1[0]*fraction2[0]+"/"+ fraction1[1]*fraction2[1];
         }
     }
+    protected String division(int[]fraction1){
+        if (fraction1[0]==0){
+            return "0";
+        }else{
+            return fraction1[0]+"/"+ fraction1[1];
+        }
+    }
+    protected String division(int[]fraction1,int[]fraction2){
+        if (fraction1[0]==0){
+            return "0";
+        }else{
+            return fraction1[0]*fraction2[1]+"/"+ fraction1[1]*fraction2[0];
+        }
+    }
 }
-
 public class Ex {
     public static void main(String[] args) {
     Fractions fractions = new Fractions();
         fractions.setFractions(1,8);
-        System.out.println(fractions.multiplication(fractions.fraction1));
-        fractions.setFractions(1,8,15,12);
-        System.out.println(fractions.multiplication(fractions.fraction1, fractions.fraction2));
+        System.out.println(fractions.division(fractions.fraction1));
+        fractions.setFractions(7,8,9,6);
+        System.out.println(fractions.division(fractions.fraction1, fractions.fraction2));
     }
 }
