@@ -15,23 +15,52 @@ class Fractions{
         this.fraction2[1]=denominator_2;
     }
     protected String summary(int[]fraction1){
-        fraction1[0] = fraction1[0]+fraction1[1];
-        return fraction1[0]+"/"+fraction1[1];
+        if (fraction1[0]==0){
+         return fraction2[0]+"/"+fraction2[1];
+        }else{
+        return fraction1[0]+fraction1[1]+"/"+fraction1[1];
+        }
     }
     protected String summary(int[]fraction1,int[]fraction2){
+        if(fraction1[0]==0){
+            return fraction2[0]+"/"+fraction2[1];
+        }
+        if(fraction2[0]==0){
+            return fraction1[0]+"/"+fraction1[1];
+        }
+        else{
         fraction2[0] = fraction2[0]*fraction1[1];
         fraction1[0] = fraction1[0]*fraction2[1];
         fraction1[1] = fraction1[1]*fraction2[1];
         return fraction1[0]+fraction2[0]+"/"+fraction1[1];
+        }
+    }
+    protected String subtraction(int[]fraction1){
+        fraction2[0]=fraction1[1]*fraction2[0];
+        fraction2[1]=fraction1[1]*fraction2[0];
+        return fraction1[0]-fraction2[0]+"/"+fraction1[1];
+    }
+    protected String subtraction(int[]fraction1,int[]fraction2){
+        if(fraction1[0]==0){
+            return -fraction2[0]+"/"+fraction2[1];
+        }
+        if(fraction2[0]==0){
+            return fraction1[0]+"/"+fraction1[1];
+        }else{
+        fraction2[0] = fraction2[0]*fraction1[1];
+        fraction1[0] = fraction1[0]*fraction2[1];
+        fraction1[1] = fraction1[1]*fraction2[1];
+        return fraction1[0]-fraction2[0]+"/"+fraction1[1];
+        }
     }
 }
 
 public class Ex {
     public static void main(String[] args) {
     Fractions fractions = new Fractions();
-        fractions.setFractions(7,8);
-        System.out.println(fractions.summary(fractions.fraction1));
-        fractions.setFractions(7,8,9,6);
+        fractions.setFractions(0,8);
+        System.out.println(fractions.subtraction(fractions.fraction1));
+        fractions.setFractions(0,8,15,12);
         System.out.println(fractions.summary(fractions.fraction1, fractions.fraction2));
     }
 }
