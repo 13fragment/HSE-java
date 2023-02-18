@@ -7,12 +7,12 @@ class Fractions{
         if (fraction2[1]==0|fraction1[1]==0)
             throw new Exception("Деление на 0");
     }
-    public void setFractions(int numerator_1, int denominator_1)throws Exception{
+    protected void setFractions(int numerator_1, int denominator_1)throws Exception{
         this.fraction1[0]=numerator_1;
         this.fraction1[1]=denominator_1;
         condition();
     }
-    public void setFractions(int numerator_1, int denominator_1,int numerator_2, int denominator_2)throws Exception{
+    protected void setFractions(int numerator_1, int denominator_1,int numerator_2, int denominator_2)throws Exception{
         setFractions(numerator_1,denominator_1);
         this.fraction2[0]=numerator_2;
         this.fraction2[1]=denominator_2;
@@ -48,6 +48,9 @@ class Fractions{
         summary(fraction1,fraction2);
         if(fraction1[0]==0){
             return -fraction2[0]+"/"+fraction2[1];
+        }
+        if (fraction1[0]==fraction2[0]&&fraction2[1]==fraction1[1]){
+            return "0";
         }
         else{
         fraction2[0] = fraction2[0]*fraction1[1];
@@ -89,9 +92,9 @@ public class Ex {
     public static void main(String[] args) {
     Fractions fractions = new Fractions();
         try{
-        fractions.setFractions(2,2);
+        fractions.setFractions(9,2);
         System.out.println(fractions.division(fractions.fraction1));
-        fractions.setFractions(1,1,0,1);
+        fractions.setFractions(5,1,5,1);
         System.out.println(fractions.subtraction(fractions.fraction1, fractions.fraction2));
         }catch (Exception e){
             System.out.println("division on 0");
