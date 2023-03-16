@@ -18,5 +18,6 @@ public class Calc {
         Fractions fractions = new Fractions();
         System.out.println(Arrays.toString(fractions.sortElements()));
 //    1/2 + 1/3 = 5/6
+
     }
 }
