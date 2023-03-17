@@ -106,9 +106,8 @@ class Fractions {
         return new Fractions(fr1.numerator * fr2.denominator, fr2.numerator * fr1.denominator);
     }
 }
-
 public class Calc {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
         try {
             System.out.println("Введите выражение вида (Число, пробел, арифметический знак, пробел, число: ");
             Scanner in = new Scanner(System.in);
@@ -122,8 +121,7 @@ public class Calc {
             int res_den = Integer.parseInt(arr_res[1]);
             int diviver = Reduction.reduce(res_num, res_den);
             if (res_den == 0){
-                System.out.println("Ошибка. Деление на 0");
-                System.exit(0);
+                throw new Exception("Деление на 0");
             }
             if (res_den / diviver == 1) {
                 System.out.println(res_num / diviver);
@@ -137,8 +135,11 @@ public class Calc {
                 }
             }
             }
+        catch (ArithmeticException e){
+            System.err.println("Деление на 0");
+        }
         catch (Exception e) {
-            System.out.println("Ошибка. Некорректное выражение");
+            System.err.println("Некорректное выражение");
         }
     }
 }
