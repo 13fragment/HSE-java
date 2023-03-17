@@ -82,37 +82,28 @@ class FractionSort {
 class Fractions {
     int numerator;
     int denominator;
-    public Fractions(int numerator, int denominator) {
+    protected Fractions(int numerator, int denominator) {
         this.numerator = numerator;
         this.denominator = denominator;
     }
-    public static String toString(Fractions fractions){
+    protected static String toString(Fractions fractions){
         return fractions.numerator + "/" + fractions.denominator;
     }
 
-    public Fractions() {
-        this.numerator = 1;
-        this.denominator = 1;
+    protected static Fractions summarise(Fractions fr1, Fractions fr2) {
+        return new Fractions(fr1.numerator * fr2.denominator + fr2.numerator * fr1.denominator, fr1.denominator * fr2.denominator);
     }
 
-    public static Fractions summarise(Fractions fr1, Fractions fr2) {
-        Fractions result = new Fractions(fr1.numerator * fr2.denominator + fr2.numerator * fr1.denominator, fr1.denominator * fr2.denominator);
-        return result;
+    protected static Fractions substraction(Fractions fr1, Fractions fr2) {
+        return new Fractions(fr1.numerator * fr2.denominator - fr2.numerator * fr1.denominator, fr1.denominator * fr2.denominator);
     }
 
-    public static Fractions substraction(Fractions fr1, Fractions fr2) {
-        Fractions result = new Fractions(fr1.numerator * fr2.denominator - fr2.numerator * fr1.denominator, fr1.denominator * fr2.denominator);
-        return result;
-    }
-
-    public static Fractions multiplication(Fractions fr1, Fractions fr2) {
-        Fractions result = new Fractions(fr1.numerator * fr2.numerator, fr1.denominator * fr2.denominator);
-        return result;
+    protected static Fractions multiplication(Fractions fr1, Fractions fr2) {
+        return new Fractions(fr1.numerator * fr2.numerator, fr1.denominator * fr2.denominator);
     }
 
     public static Fractions division(Fractions fr1, Fractions fr2) {
-        Fractions result = new Fractions(fr1.numerator * fr2.denominator, fr2.numerator * fr1.denominator);
-        return result;
+        return new Fractions(fr1.numerator * fr2.denominator, fr2.numerator * fr1.denominator);
     }
 }
 
