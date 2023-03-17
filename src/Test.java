@@ -13,14 +13,11 @@ public class Test {
         String fraction2[]= a.get(2).split("/");
         int numerator2 = Integer.parseInt(fraction2[0]);
         int denominator2 = Integer.parseInt(fraction2[1]);
-        if (arOperation == "+"){
+        if (Objects.equals(arOperation, "+")){
             numerator2 = numerator2*denominator1;
             numerator1 = numerator1*denominator2;
             denominator1 = denominator1*denominator2;
         }
-        numerator2 = numerator2*denominator1;
-        numerator1 = numerator1*denominator2;
-        denominator1 = denominator1*denominator2;
         String result = numerator1+numerator2+"/"+denominator1;
         a.add(0,result);
         for(int i =0;i<3;i++){
