@@ -3,11 +3,10 @@ import java.util.Objects;
 import java.util.Scanner;
 class FractionSort {
     public static String operations(String exp) {
-        String arr[] = new String[exp.split(" ").length];
-        String arr_fr[] = new String[2];
+        String arr_fr[] = {};
         Fractions fr1, fr2;
         int index = 1;
-        arr = exp.split(" ");
+        String arr[] = exp.split(" ");
         while (exp.contains("*")) {
             arr = exp.split(" ");
             if (Objects.equals(arr[index], "*")) {
@@ -82,9 +81,10 @@ class FractionSort {
 class Fractions {
     int numerator;
     int denominator;
-    protected Fractions(int numerator, int denominator) {
+    protected Fractions(int numerator, int denominator) throws ArithmeticException{
         this.numerator = numerator;
         this.denominator = denominator;
+        if (denominator == 0) {throw new ArithmeticException();}
     }
     protected static String toString(Fractions fractions){
         return fractions.numerator + "/" + fractions.denominator;
@@ -108,15 +108,12 @@ class Fractions {
 }
 public class Calc {
     public static void main(String[] args) throws Exception{
+        System.out.println("Введите выражение вида (Число, пробел, арифметический знак, пробел, число: ");
+        Scanner in = new Scanner(System.in);
+        String exp = in.nextLine();
+        in.close();
         try {
-            System.out.println("Введите выражение вида (Число, пробел, арифметический знак, пробел, число: ");
-            Scanner in = new Scanner(System.in);
-            String exp = in.nextLine();
-            in.close();
-
-            Fractions fr1, fr2;
-            String arr_res[] = new String[2];
-            arr_res = FractionSort.operations(exp).split("/");
+            String [] arr_res = FractionSort.operations(exp).split("/");
             int res_num = Integer.parseInt(arr_res[0]);
             int res_den = Integer.parseInt(arr_res[1]);
             int diviver = Reduction.reduce(res_num, res_den);
