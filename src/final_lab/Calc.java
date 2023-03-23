@@ -116,7 +116,10 @@ public class Calc {
                 res_num = res_num * (-1);
                 res_den = res_den *(-1);
             }
-            int diviver = Reduction.reduce(res_num, res_den);
+            if (res_den<0 && res_num>0){
+                res_num = res_num * (-1);
+                res_den = res_den * (-1);
+            }            int diviver = Reduction.reduce(res_num, res_den);
             if (res_den == 0){
                 throw new Exception("Деление на 0");
             }
