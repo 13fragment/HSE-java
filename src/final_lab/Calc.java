@@ -104,7 +104,7 @@ class Fractions {
 }
 public class Calc {
     public static void main(String[] args) throws Exception{
-        System.out.println("Введите выражение вида (Число, пробел, арифметический знак, пробел, число: ");
+        System.out.println("Введите дробное выражение: ");
         Scanner in = new Scanner(System.in);
         String exp = in.nextLine();
         in.close();
