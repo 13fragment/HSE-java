@@ -104,10 +104,10 @@ class Fractions {
 }
 public class Calc {
     public static void main(String[] args) throws Exception{
-        System.out.println("Введите дробное выражение: ");
+        System.out.println("Введите выражение: ");
         Scanner in = new Scanner(System.in);
+        while (!in.hasNext("/quit")) {
         String exp = in.nextLine();
-        in.close();
         try {
             String [] arr_res = FractionSort.operations(exp).split("/");
             int res_num = Integer.parseInt(arr_res[0]);
@@ -128,7 +128,7 @@ public class Calc {
                     System.out.println("0");
                 }
                 else{
-                    System.out.println(res_num / diviver + "/" + res_den / diviver);
+                    System.out.println(res_num / diviver + "/" + res_den / diviver+"\nВведите выражение: ");
                 }
             }
             }
@@ -137,7 +137,7 @@ public class Calc {
         }
         catch (Exception e) {
             System.err.println("Некорректное выражение");
-        }
+        }}
     }
 }
 class Reduction {
