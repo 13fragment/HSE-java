@@ -134,12 +134,15 @@ public class Calc {
                     System.out.println(res_num / diviver + "/" + res_den / diviver+"\nВведите выражение: ");
                 }
             }
+            if (in.hasNext("/quit")){
+                System.out.println("Завершение работы");
+            }
             }
         catch (ArithmeticException e){
-            System.err.println("Деление на 0");
+            System.err.println("Ошибка. Деление на 0");
         }
         catch (Exception e) {
-            System.err.println("Некорректное выражение");
+            System.err.println("Ошибка. Некорректное выражение");
         }}
     }
 }
