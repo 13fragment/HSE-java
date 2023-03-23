@@ -3,11 +3,10 @@ import java.util.Objects;
 import java.util.Scanner;
 class FractionSort {
     public static String operations(String exp) {
-        String[] arr_fr = {};
+        String[] arr_fr;
         Fractions fr1, fr2;
-        int index = 1;
         String[] arr;
-        arr = exp.split(" ");
+        int index = 1;
         while (exp.contains("*")) {
             arr = exp.split(" ");
             if (Objects.equals(arr[index], "*")) {
@@ -20,11 +19,9 @@ class FractionSort {
                 arr_str = arr_str.replace(arr[index - 1] + " ", "");
                 arr_str = arr_str.replace(" " + arr[index + 1], "");
                 exp = arr_str;
-
             } else
                 index += 2;
         }
-        index = 1;
         while (exp.contains(":")) {
             arr = exp.split(" ");
             if (Objects.equals(arr[index], ":")) {
@@ -40,7 +37,6 @@ class FractionSort {
 
             } else
                 index += 2;
-
         }
         index = 1;
         while (exp.contains(" - ")) {
@@ -59,7 +55,6 @@ class FractionSort {
             } else
                 index += 2;
         }
-        index = 1;
         while (exp.contains("+")) {
             arr = exp.split(" ");
             if (Objects.equals(arr[index], "+")) {
