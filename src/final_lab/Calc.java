@@ -112,6 +112,10 @@ public class Calc {
             String [] arr_res = FractionSort.operations(exp).split("/");
             int res_num = Integer.parseInt(arr_res[0]);
             int res_den = Integer.parseInt(arr_res[1]);
+            if (res_num <0 && res_den <0){
+                res_num = res_num * (-1);
+                res_den = res_den *(-1);
+            }
             int diviver = Reduction.reduce(res_num, res_den);
             if (res_den == 0){
                 throw new Exception("Деление на 0");
@@ -123,7 +127,7 @@ public class Calc {
                 if (res_num == 0) {
                     System.out.println("0");
                 }
-                else {
+                else{
                     System.out.println(res_num / diviver + "/" + res_den / diviver);
                 }
             }
@@ -148,6 +152,7 @@ class Reduction {
                 else denominator_res = denominator_res - numerator_res;
             }
             return numerator_res;
-        } else return 1;
+        }
+       else return 1;
     }
 }
